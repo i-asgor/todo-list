@@ -23,8 +23,13 @@ const ToDoForm = () => {
         })
         
     }
+
+    const TaskList = () => {
+        navigate('/todo-list');
+    }
     return (
-        <div className='flex justify-center items-center h-screen'>
+        <div className='flex flex-col justify-center items-center h-screen'>
+            <button onClick={TaskList} className='btn btn-primary'>Task List</button>
             <div className="card max-w-lg bg-base-100 shadow-xl">
                 <div className="card-body text-center">
                     <h2 className="text-3xl text-primary font-bold">TO DO APP!</h2>

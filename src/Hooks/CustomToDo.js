@@ -5,7 +5,7 @@ const CustomToDo = ()=> {
     const [todo, setTodo] = useState([]);
 
     useEffect(() =>{
-        fetch(`http://127.0.0.1:5000/todo`)
+        fetch(`https://protected-ocean-76841.herokuapp.com/todo`)
         .then(res => res.json())
         .then(data => setTodo(data))
     },[])

@@ -12,7 +12,7 @@ const ToDoList = () => {
         // console.log(id);
         const proceed = window.confirm('Are You Sure?')
         if(proceed){
-            const url = `http://127.0.0.1:5000/todo/${id}`;
+            const url = `https://protected-ocean-76841.herokuapp.com/todo/${id}`;
             fetch(url,{
                 method: 'DELETE'
             })
