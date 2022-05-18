@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 
 const Login = () => {
@@ -37,7 +37,8 @@ const Login = () => {
                         <div class="card-actions justify-center">
                         <input type="submit" class="btn btn-primary" />
                         </div>
-                    </form>                    
+                    </form>
+                    <p>New to TODO APPS? <Link className='btn btn-primary btn-sm text-white pe-auto text-decoration-none' to='/register'>Please SignUp</Link></p>                 
                 </div>
             </div>
 

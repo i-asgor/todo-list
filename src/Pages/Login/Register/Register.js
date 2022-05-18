@@ -1,6 +1,6 @@
 import React from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 
 const Register = () => {
@@ -39,7 +39,8 @@ const Register = () => {
                         <div class="card-actions justify-center">
                         <input type="submit" class="btn btn-primary" />
                         </div>
-                    </form>                    
+                    </form>  
+                    <p>Are You Already Account?<Link className='btn btn-primary btn-sm text-white pe-auto text-decoration-none' to='/login'>Please Login</Link></p>                                   
                 </div>
             </div>
 

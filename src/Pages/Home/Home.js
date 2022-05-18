@@ -3,8 +3,11 @@ import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
     const navigate = useNavigate();
-    const loginwithGoogle = () => {
-        navigate('/todo')
+    const login = () => {
+        navigate('/login')
+    }
+    const register = () => {
+        navigate('/register')
     }
 
     return (
@@ -13,7 +16,8 @@ const Home = () => {
                 <div class="card-body text-center">
                     <h2 class="text-3xl text-primary font-bold">TO DO APP!</h2>
                     <div class="card-actions justify-center">
-                    <button class="btn btn-primary" onClick={loginwithGoogle}>Login With Google</button>
+                    <button class="btn btn-primary" onClick={login}>Login</button>
+                    <button class="btn btn-primary" onClick={register}>Register</button>
                     </div>
                 </div>
             </div>
