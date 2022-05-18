@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 
@@ -14,8 +14,11 @@ const Login = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
+  
+  
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
 
-    if(user){
+    if(user || googleUser){
         navigate('/todo');
      }
 
@@ -25,6 +28,7 @@ const Login = () => {
         const password = passwordRef.current.value;
         signInWithEmailAndPassword(email,password);
     }
+
 
     return (
         <div className='flex justify-center items-center h-screen'>
@@ -39,6 +43,8 @@ const Login = () => {
                         </div>
                     </form>
                     <p>New to TODO APPS? <Link className='btn btn-primary btn-sm text-white pe-auto text-decoration-none' to='/register'>Please SignUp</Link></p>                 
+                    <div class="divider">OR</div>
+                    <button onClick={()=> signInWithGoogle()} class="btn btn-outline btn-success">Google Sign In</button>
                 </div>
             </div>
 
