@@ -13,6 +13,9 @@ const Register = () => {
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
 
+    if(user){
+        navigate('/todo')
+    }
 
     const handleRegister = async(e) => {
         e.preventDefault();
@@ -21,9 +24,7 @@ const Register = () => {
         const password = e.target.password.value;
         
         await createUserWithEmailAndPassword(email,password);
-        if(user){
-            navigate('/todo')
-        }
+        
     }
 
     return (
