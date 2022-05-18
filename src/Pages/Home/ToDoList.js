@@ -1,5 +1,6 @@
 import React from 'react';
 import CustomToDo from '../../Hooks/CustomToDo';
+import ToDoData from './ToDoData';
 
 const ToDoList = () => {
     const [todo, setTodo] = CustomToDo([]);
@@ -26,10 +27,10 @@ const ToDoList = () => {
     return (
 
         <div className='flex justify-center items-center h-screen'>
-            <div class="card max-w-xl bg-base-100 shadow-xl">
-            <div class="card-body">
-            <div class="overflow-x-auto flex justify-center items-center">
-                <table class="table table-zebra w-full">
+            <div className="card max-w-xl bg-base-100 shadow-xl">
+            <div className="card-body">
+            <div className="overflow-x-auto flex justify-center items-center">
+                <table className="table table-zebra w-full">
                     <thead>
                     <tr>
                         <th>Name</th>
@@ -39,13 +40,7 @@ const ToDoList = () => {
                     </thead>
                     <tbody>
                         {
-                            todo.map(t => <tr>
-                            <td>{t.name}</td>
-                            <td>{t.description}</td>
-                            <td>
-                                <button onClick={()=>todoDelete(todo._id)} className='btn btn-error btn-xs'>Delete</button>
-                            </td>
-                            </tr>)
+                            todo.map(t => <ToDoData key={t._id} t={t} todoDelete={todoDelete}></ToDoData>)
                         }    
                     </tbody>
                 </table>

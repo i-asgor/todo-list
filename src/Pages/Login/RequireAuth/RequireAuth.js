@@ -8,7 +8,7 @@ const RequireAuth = ({children}) => {
     const location = useLocation();
 
     if(!user){
-        return <Link to="/login" state={{from: location}} replace />
+        return <Link to="/login" state={{from: location}} replace></Link>
     }
     return children;
 };

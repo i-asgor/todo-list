@@ -25,9 +25,9 @@ const ToDoForm = () => {
     }
     return (
         <div className='flex justify-center items-center h-screen'>
-            <div class="card max-w-lg bg-base-100 shadow-xl">
-                <div class="card-body text-center">
-                    <h2 class="text-3xl text-primary font-bold">TO DO APP!</h2>
+            <div className="card max-w-lg bg-base-100 shadow-xl">
+                <div className="card-body text-center">
+                    <h2 className="text-3xl text-primary font-bold">TO DO APP!</h2>
                     <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 gap-5">
                         <input placeholder='Name' {...register("name", { required: true, maxLength: 20 })} />
                         <textarea placeholder='Description' {...register("description")} />

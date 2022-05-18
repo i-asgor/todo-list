@@ -28,14 +28,14 @@ const Login = () => {
 
     return (
         <div className='flex justify-center items-center h-screen'>
-            <div class="card max-w-lg bg-base-100 shadow-xl">
-                <div class="card-body text-center">
-                    <h2 class="text-3xl text-primary font-bold">TO DO APP!</h2>
+            <div className="card max-w-lg bg-base-100 shadow-xl">
+                <div className="card-body text-center">
+                    <h2 className="text-3xl text-primary font-bold">TO DO APP!</h2>
                     <form onSubmit={HandleLogin} className="grid gap-3">
-                        <input type="email" placeholder="Email" ref={emailRef} class="input input-bordered input-sm w-full max-w-sm" required />
-                        <input type="password" placeholder="Password" ref={passwordRef} class="input input-bordered input-sm w-full max-w-sm" required />
-                        <div class="card-actions justify-center">
-                        <input type="submit" class="btn btn-primary" />
+                        <input type="email" placeholder="Email" ref={emailRef} className="input input-bordered input-sm w-full max-w-sm" required />
+                        <input type="password" placeholder="Password" ref={passwordRef} className="input input-bordered input-sm w-full max-w-sm" required />
+                        <div className="card-actions justify-center">
+                        <input type="submit" className="btn btn-primary" />
                         </div>
                     </form>
                     <p>New to TODO APPS? <Link className='btn btn-primary btn-sm text-white pe-auto text-decoration-none' to='/register'>Please SignUp</Link></p>                 
