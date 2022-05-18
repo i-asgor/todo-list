@@ -1,12 +1,15 @@
 import React from 'react';
-import CustomToDO from '../../Hooks/CustomToDo';
+import CustomToDo from '../../Hooks/CustomToDo';
 
 const ToDoList = () => {
-    const [todo, setTodo] = CustomToDO([]);
+    const [todo, setTodo] = CustomToDo([]);
+    console.log(todo)
+
     const todoDelete = id =>{
+        // console.log(id);
         const proceed = window.confirm('Are You Sure?')
         if(proceed){
-            const url = `http://localhost:5000/todo/${id}`;
+            const url = `http://127.0.0.1:5000/todo/${id}`;
             fetch(url,{
                 method: 'DELETE'
             })
@@ -17,7 +20,7 @@ const ToDoList = () => {
                 setTodo(remaining);
             });
         }
-        // console.log(id)
+        console.log(id)
     }
 
     return (
@@ -35,18 +38,15 @@ const ToDoList = () => {
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
                         {
-                            todo.map(t => <>
+                            todo.map(t => <tr>
                             <td>{t.name}</td>
                             <td>{t.description}</td>
                             <td>
                                 <button onClick={()=>todoDelete(todo._id)} className='btn btn-error btn-xs'>Delete</button>
                             </td>
-                            </>)
-                        }
-                        
-                    </tr>      
+                            </tr>)
+                        }    
                     </tbody>
                 </table>
                 </div>

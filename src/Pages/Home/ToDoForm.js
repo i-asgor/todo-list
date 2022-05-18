@@ -1,10 +1,9 @@
 import React from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import auth from '../../firebase.init';
+import { useNavigate } from 'react-router-dom';
 
 const ToDoForm = () => {
-    const [user, loading] = useAuthState(auth);
+    const navigate = useNavigate();
     const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
@@ -20,7 +19,9 @@ const ToDoForm = () => {
         .then(res=>res.json())
         .then(output => {
             // console.log(output);
+            navigate('/todo-list');
         })
+        
     }
     return (
         <div className='flex justify-center items-center h-screen'>

@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 
 
-const CustomToDO = ()=> {
-    const [items, setItems] = useState([]);
+const CustomToDo = ()=> {
+    const [todo, setTodo] = useState([]);
 
     useEffect(() =>{
         fetch(`http://127.0.0.1:5000/todo`)
         .then(res => res.json())
-        .then(data => setItems(data))
+        .then(data => setTodo(data))
     },[])
-    return [items, setItems];
+    return [todo, setTodo];
 }
 
-export default CustomToDO;
+export default CustomToDo;
